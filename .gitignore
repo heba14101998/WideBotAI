@@ -1,0 +1,8 @@
+__pycache__/
+cache_dir/
+gensim-data/
+glove-twitter-25
+glove-twitter-25.vectors.npy
+nltk_data/
+runs/
+*.pth
