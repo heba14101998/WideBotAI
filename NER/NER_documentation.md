@@ -168,14 +168,13 @@ Directly comparing these results to sentiment analysis benchmarks is challenging
 **Benchmarks in NER**
 
 Here are some existing benchmarks in NER and their key characteristics:
-| Benchmark | Dataset | Significance | Key Metrics | State-of-the-art Performance |
+| Dataset | Dataset Description | Significance | Key Metrics | State-of-the-art Performance |
 |---|---|---|---|---|
 | CoNLL-2003 Shared Task | News articles annotated with four entity types: PERSON, LOCATION, ORGANIZATION, MISC. | Widely used benchmark for NER, providing a standard dataset for comparing models. | F1 score, Precision, Recall | BERT-based models (around 90% F1 score) |
 | GENIA Corpus | Biomedical literature annotated with gene and protein names. | Important for NER in the domain of biomedicine. | F1 score, Precision, Recall | Specialized bio-NER models achieving high F1 scores (above 90%) |
 | OntoNotes 5.0 | Diverse text genres (news, blogs, web text) with 18 entity types. | Covers a broader range of entity types and diverse text styles. | F1 score, Precision, Recall | BERT-based models, achieving F1 scores above 90% |
 | WNUT 2017 NER Task | Twitter data with 10 entity types. | Focuses on NER in social media text, addressing the challenges of informal language and noise. | F1 score, Precision, Recall | Models achieving F1 scores in the 80s, reflecting the complexity of social media text |
 | ACE 2005 | English broadcast news transcripts with 7 entity types. | Provides a benchmark for NER in news transcripts, considering temporal information and complex entities. | F1 score, Precision, Recall | Specialized models for news transcript NER, achieving high F1 scores | 
-
 
 ### 8. Reflection Questions
 
