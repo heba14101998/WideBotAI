@@ -6,3 +6,5 @@ glove-twitter-25.vectors.npy
 nltk_data/
 runs/
 *.pth
+
+Sentiment-Analysis.ipynb

@@ -111,7 +111,7 @@ def plot_auc(y_true, y_pred, probs, classes):
     plt.show()
 
 
-def learning_curve(accuracy, i):
+def learning_curve(accuracy, loss, i, palette_color):
     """
     Plots the learning curve of a model's accuracy over batches.
 
@@ -126,11 +126,12 @@ def learning_curve(accuracy, i):
         None
     """
     plt.figure(figsize=(10,4))
-    plt.plot(accuracy, '-',color=palette_color[0])
+    plt.plot(accuracy, '-',color=palette_color[0], label='Accuracy')
+    plt.plot(loss, '-',color=palette_color[-1], label='Loss')
 
     # Label the plot.
-    plt.title(f"Model Accuracy in epoch {i} over batchs")
-    plt.xlabel("Batch")
-    plt.ylabel("Accuracy")
+    plt.title(f"Model Accuracy and Loss over Epochs")
+    plt.xlabel("Epoch")
+    plt.legend()
 
     plt.show()

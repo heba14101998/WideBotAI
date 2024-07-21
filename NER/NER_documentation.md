@@ -1,4 +1,6 @@
 
+---
+
 # Named Entity Recognition (NER) for Text Analysis
 ---
 
@@ -171,7 +173,7 @@ The experiments conducted in this project will demonstrate the effectiveness of 
 <!-- مميزات وعيوب كل طريقه -->
 
 <!-- جدول مقارنه هنا  -->
-### Benchmarks in NER
+**Benchmarks in NER**
 
 Here are some existing benchmarks in NER and their key characteristics:
 
