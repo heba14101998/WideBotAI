@@ -1,6 +1,9 @@
 ## Project Overview
-## Methodology
+This repository contains two tasks:
 
+1. **Named Entity Recognition using NLP**: Develop a model for Named Entity Recognition on text data by prepare, train, and evluation the dataset in order to predict the entity for each word in the sentences.
+
+2. ** **: 
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -8,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 - Python 3.9 (or compatible)
-- Conda (optional, but recommended)
+- Conda 
 
 ### Installation
 
@@ -30,3 +33,4 @@ These instructions will get you a copy of the project up and running on your loc
    ```bash
    pip install -r requirements.txt
    ```
+5. **Run each notebook to try the experiments**

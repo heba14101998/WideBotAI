@@ -13,3 +13,8 @@ gensim==4.3.0
 scikit-learn==1.5.1
 scikit-multilearn==0.2.0
 torch==2.3.1
+simpletransformers==0.70.1
+
+
+transformers==4.42.4
+wordcloud==1.9.3
