@@ -127,9 +127,8 @@ def learning_curve(accuracy, loss, i, palette_color):
     """
     plt.figure(figsize=(10,4))
     plt.plot(accuracy, '-',color=palette_color[0], label='Accuracy')
-    plt.plot(loss, '-',color=palette_color[-1], label='Loss')
+    plt.plot(loss, '-',color=palette_color[2], label='Loss')
 
-    # Label the plot.
     plt.title(f"Model Accuracy and Loss over Epochs")
     plt.xlabel("Epoch")
     plt.legend()
