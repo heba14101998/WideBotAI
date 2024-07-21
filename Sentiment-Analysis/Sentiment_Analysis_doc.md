@@ -93,24 +93,37 @@ Sentiment analysis is crucial for understanding customer feedback, gauging publi
 
 ### 8. Overall Conclusion**
 
-The experiments conducted in this project will demonstrate the effectiveness of different approaches to Named Entity Recognition. Comparing the performance of the baseline, LSTM, and BERT models will highlight the advantages of using more advanced techniques like deep learning and pre-trained models.
+While both the TF-IDF and BERT methods achieved moderate success in sentiment analysis, the BERT method showed potential for higher accuracy but requires further tuning and optimization. 
 
-<!-- * **Comparison of Approaches:**  Compare the strengths and weaknesses of the different approaches you used (baseline, BERT, and any additional experiments). Consider:
-    * **Accuracy:** Which model achieved the best performance?
-    * **Computational Resources:**  Which approach was more computationally demanding?
-    * **Interpretability:** Which model is easier to understand and explain?
-* **Future Directions:**  Mention any future directions you see for this project. For example:
-    * "Exploring ensemble methods to further improve the accuracy of sentiment classification."
-    * "Developing methods for interpreting BERT's predictions and understanding its decision-making process." -->
+**TF-IDF:**
+
+* Achieved a balanced performance with moderate accuracy, precision, recall, and F1-score.
+* Is a simpler and faster approach, making it suitable for quick prototyping and exploration.
+
+**BERT:**
+
+* Showed promising results in training accuracy but suffered from potential overfitting, indicating a gap between training and validation performance. 
+* Has the potential to achieve higher accuracy with careful fine-tuning and optimization.
+* Requires more computational resources and time for training and evaluation.
 
 
 ### 9. Reflection Questions:
 
 1. **What was the biggest challenge you faced in implementing Named Entity Recognition?** 
 
+Here are some of the biggest challenges I've faced in implementing sentiment analysis, and the insights I've gained about NLP and sentiment analysis through this project:
+
+    * Text data can contain errors, slang, sarcasm, and other factors that make it difficult to interpret accurately. 
+    * Complex models like BERT need more code and data processing.
+    * Finding optimal hyperparameters for BERT model is time-consuming and computationally expensive.
+
 2. **What insights did you gain about NLP and NER through this project?** 
 
-This project will provide valuable insights into the capabilities and limitations of various NLP techniques for NER. It will also shed light on the importance of data preparation, model selection, and hyperparameter tuning for achieving optimal results. 
+    * The quality and quantity of data are crucial for any NLP task, especially sentiment analysis. 
+    * Text normalization and feature engineering are crucial for preparing text data for NLP models. This often involves removing noise, handling punctuation, and transforming text into a suitable representation for the chosen model.
+    * Deciding between classical ML models (like TF-IDF with Logistic Regression) and more complex deep learning models (like BERT) depends on the dataset size, computational resources, and the desired level of accuracy. 
+    * Understanding *why* a model makes a particular prediction can be difficult, especially with complex deep learning models. This is crucial for debugging, identifying biases, and gaining trust in the model.
+
 
 
 
