@@ -143,9 +143,27 @@ Evaluate the performance of your fine-tuned BERT model using appropriate metrics
 
 ### 7. Overall Conclusion
 
-The experiments conducted in this project will demonstrate the effectiveness of different approaches to Named Entity Recognition. Comparing the performance of the baseline, LSTM, and BERT models will highlight the advantages of using more advanced techniques like deep learning and pre-trained models.
+The three NER methods tested with a 1.5 million data point dataset reveal a trend of increasing performance as model complexity increases. 
 
-<!-- مميزات وعيوب كل طريقه -->
+* **Baseline (Word Embeddings & Logistic Regression):** Despite its simplicity, the baseline achieved an accuracy of 88%, highlighting the effectiveness of pre-trained word embeddings for capturing semantic meaning. However, its performance on individual tags was inconsistent, indicating limitations in capturing context for complex NER tasks. This model Con NOT capture the context between given phrases.
+
+* **LSTM from Scratch:** This model, trained from scratch, showed improvement over the baseline, likely due to its ability to capture long-range dependencies within sentences. It achieved a significant drop in loss throughout training, suggesting better learning compared to the baseline. This highlights the benefit of recurrent networks for sequential data like text. Despite having only one LSTM layer, it takes too long to complete tasks (8.3 hours) on the CPU.
+
+* **Fine-tuned BERT:** The fine-tuned BERT model achieved the highest F1-score, demonstrating its powerful capabilities in capturing complex language patterns. Its performance on this dataset is comparable to state-of-the-art models on smaller datasets. However, the limited training epochs due to computational constraints might have hindered its full potential.
+
+**Comparison to Sentiment Analysis Benchmarks:**
+
+Directly comparing these results to sentiment analysis benchmarks is challenging due to the different task nature. However, some observations can be made:
+
+* **Dataset Size:** The 1.5 million data points used in this NER task are significantly larger than datasets typically used in sentiment analysis (often in the range of tens of thousands). This larger dataset size likely contributed to the higher performance achieved by the more complex models.
+* **Model Complexity:** The use of deep learning models like LSTMs and BERT in NER is common, similar to sentiment analysis. However, in sentiment analysis, simpler models like Naive Bayes or SVM often perform surprisingly well, especially with well-engineered features. 
+* **Fine-tuning:** The fine-tuning approach used with BERT is highly effective in sentiment analysis, achieving state-of-the-art results on various benchmarks. The similar success in NER underscores the transferability of BERT's knowledge across diverse NLP tasks.
+
+**Future Directions:**
+
+* **Hyperparameter Optimization:** Further exploration of hyperparameters for each model could lead to improved performance. 
+* **Larger Models:** Exploring larger BERT models (e.g., BERT-large-uncased) or even specialized NER models like BERT-NER could yield even better results.
+
 
 **Benchmarks in NER**
 
@@ -159,13 +177,26 @@ Here are some existing benchmarks in NER and their key characteristics:
 | ACE 2005 | English broadcast news transcripts with 7 entity types. | Provides a benchmark for NER in news transcripts, considering temporal information and complex entities. | F1 score, Precision, Recall | Specialized models for news transcript NER, achieving high F1 scores | 
 
 
-#### Compare your results to existing benchmarks in NER:
-<!-- قارن هنا  -->
-
 ### 8. Reflection Questions
 
 1. **What was the biggest challenge you faced in implementing Named Entity Recognition?** 
+Here are the key challenges faced in implementing Named Entity Recognition (NER), summarized in bullet points:
+
+    * Dealing with large datasets.
+    * Data biases toeards `O` tag.
+    * Complex models like LSTMs and BERT need more code and data processing.
+    * Finding optimal hyperparameters for these models is time-consuming and computationally expensive.
+
 
 2. **What insights did you gain about NLP and NER through this project?** 
 
-This project will provide valuable insights into the capabilities and limitations of various NLP techniques for NER. It will also shed light on the importance of data preparation, model selection, and hyperparameter tuning for achieving optimal results. 
+Here are some key insights I gained about NLP and NER through this project:
+
+* The performance of NLP models is heavily reliant on the quality and quantity of training data. Even the most sophisticated models struggle without sufficient and diverse training data.
+
+* Pre-trained models like BERT are powerful. They provide a strong foundation for various downstream tasks and often achieve impressive performance with minimal fine-tuning.
+
+*  Understanding context is crucial for many NLP tasks, including NER. Models need to go beyond simply recognizing individual words and instead learn how words relate to each other within a sentence and the broader context of the document.
+
+* Simple models like Logistic Regression can provide a baseline, but more complex models like LSTMs and BERT are better equipped to handle the complexities of NER, especially with large datasets.
+
