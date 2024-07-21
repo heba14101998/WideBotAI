@@ -66,22 +66,19 @@ Sentiment analysis is crucial for understanding customer feedback, gauging publi
 * **Goal:**  Establish a reference point for comparison with more advanced methods. 
 #### Methodology:
 
-1. **Feature Extraction:** 
+1. **Numerical Representation:** 
     - TF-IDF assigns weights to words based on their frequency in the document and the corpus.
 
-2. **Data Splitting:** 
-    - Split the data into training and testing sets (80% for training, 20% for testing).
-
-3. **Selection & Training:** 
+2. **Model Selection & Training:** 
     - Use Logistic Regression model as a baseline model because of its simplicity, speed, and interpretability.
     - Train the model on the vectorized training data.
 
-4. **Evaluation:** Using my utils module [utils.py](https://github.com/heba14101998/WideBotAI/blob/main/utils.py)
+3. **Evaluation:** Using my utils module [utils.py](https://github.com/heba14101998/WideBotAI/blob/main/utils.py)
    - Calculate the accuracy of each model on the validation data.
    - Plot the confusion matrices using Seaborn to visualize the model's predictions.
    - Print classification reports to get detailed performance metrics for each class.
 
-5. **Prediction:** Use the trained model to predict sentiment on unseen text.
+4. **Prediction:** Use the trained model to predict sentiment on unseen text.
 
 ### 7. Advanced Experiments: Use BERT Base for tokenizing**
 
