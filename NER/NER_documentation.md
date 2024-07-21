@@ -115,56 +115,31 @@ This column contains:
 
 **Goal:** Enhance performance by utilizing the power of pre-trained language models, specifically BERT (Bidirectional Encoder Representations from Transformers).
 
-<!-- 1. **Setup and Import dependancies.**
+1. **Setup and Import dependancies.**
 
 2. **Load and Prepare Dataset:**
 
-2. **Model Selection:**
-Select **BERT-base-uncased**; A good starting point for general NER tasks. Consider factors like model size, training data, and computational power. 
+3. **Model Selection:**
+    - Select **BERT-base-uncased**; A good starting point for general NER tasks. Consider factors like model size, training data, and computational power. 
+    - Load the pre-trained BERT model and add a classification head on top. 
+    - Add **Classification Head**; This layer will output predictions for each token in the sequence, indicating the corresponding entity type.
 
-3. **Fine-Tuning BERT for NER:**
+4. **Fine-Tuning:** 
+    - **Learning Rate:** I used **1e-4** as recommended in BERT documentation.
+    - **Batch Size:** I used 4 to save memory (RAM).
+    - **Epochs:** I used only one epoch because of the shortage of resources.
+    - Iterate through the dataset, feed the prepared data to the BERT model, calculate the loss, and update the model's weights using the optimizer. 
 
-- **Initialize the BERT Model:** Load the pre-trained BERT model and add a classification head on top. 
-    * **Classification Head:** This layer will output predictions for each token in the sequence, indicating the corresponding entity type.
+5. **Evaluation:**
 
-- **Fine-Tuning:** 
-    * **Objective:** Train the BERT model by fine-tuning its weights to perform NER.
-    * **Loss Function:** Use a suitable loss function for classification tasks, like `CrossEntropyLoss`.
-    * **Optimizer:** Choose an optimizer to update the model weights during training (e.g., AdamW).
-    * **Training Process:** Iterate through the dataset, feed the prepared data to the BERT model, calculate the loss, and update the model's weights using the optimizer.   
+Evaluate the performance of your fine-tuned BERT model using appropriate metrics for NER such as Precision, Recall, and F1-score:
 
+6. **Making Predictions:**
 
-**4. Training Configuration:**
-
-* **Hyperparameters:**  Experiment with these hyperparameters to optimize performance:
-    * **Learning Rate:** Determines the step size for weight updates.
-    * **Batch Size:** Number of samples processed at once during training.
-    * **Epochs:** Number of times the entire dataset is passed through the model during training.
-    * **Warmup Steps:**  A gradual increase in learning rate at the beginning of training to help the model converge faster.
-
-**5. Evaluation:**
-
-* **Metrics:** Evaluate the performance of your fine-tuned BERT model using appropriate metrics for NER:
-    * **F1 Score:** A balanced measure of Precision and Recall, often used as the primary metric.
-    * **Precision:**  Accuracy of the model's predictions.
-    * **Recall:**  Ability of the model to correctly identify all entities.
-
-**6. Making Predictions:**
-
-* **Load the Fine-Tuned Model:** Load the saved state of your fine-tuned BERT model.
-* **Input Text:** Provide new text data that you want to analyze for named entities.
-* **Run Inference:** Pass the new text through the loaded model.
-* **Generate Predictions:** Obtain predictions from the model, indicating the entity types for each token. -->
-<!-- 
-
-3. **Data Splitting**: 
-
-4. **Model Architecture:** 
-
-5. **Model Training:** 
-6. **Make Prediction:**
-    - Load the saved model state dictionary for inference.
-    - Use the loaded model to make predictions on new unseen data. -->
+    - **Load the Fine-Tuned Model:** Load the saved state of your fine-tuned BERT model.
+    - **Input Text:** Provide new text data that you want to analyze for named entities.
+    - **Run Inference:** Pass the new text through the loaded model.
+    - **Generate Predictions:** Obtain predictions from the model, indicating the entity types for each token. 
 
 ### 7. Overall Conclusion
 
@@ -172,45 +147,17 @@ The experiments conducted in this project will demonstrate the effectiveness of 
 
 <!-- مميزات وعيوب كل طريقه -->
 
-<!-- جدول مقارنه هنا  -->
 **Benchmarks in NER**
 
 Here are some existing benchmarks in NER and their key characteristics:
+| Benchmark | Dataset | Significance | Key Metrics | State-of-the-art Performance |
+|---|---|---|---|---|
+| CoNLL-2003 Shared Task | News articles annotated with four entity types: PERSON, LOCATION, ORGANIZATION, MISC. | Widely used benchmark for NER, providing a standard dataset for comparing models. | F1 score, Precision, Recall | BERT-based models (around 90% F1 score) |
+| GENIA Corpus | Biomedical literature annotated with gene and protein names. | Important for NER in the domain of biomedicine. | F1 score, Precision, Recall | Specialized bio-NER models achieving high F1 scores (above 90%) |
+| OntoNotes 5.0 | Diverse text genres (news, blogs, web text) with 18 entity types. | Covers a broader range of entity types and diverse text styles. | F1 score, Precision, Recall | BERT-based models, achieving F1 scores above 90% |
+| WNUT 2017 NER Task | Twitter data with 10 entity types. | Focuses on NER in social media text, addressing the challenges of informal language and noise. | F1 score, Precision, Recall | Models achieving F1 scores in the 80s, reflecting the complexity of social media text |
+| ACE 2005 | English broadcast news transcripts with 7 entity types. | Provides a benchmark for NER in news transcripts, considering temporal information and complex entities. | F1 score, Precision, Recall | Specialized models for news transcript NER, achieving high F1 scores | 
 
-**1. CoNLL-2003 Shared Task:**
-
-* **Dataset:** News articles annotated with four entity types: PERSON, LOCATION, ORGANIZATION, MISC. 
-* **Significance:** Widely used benchmark for NER, providing a standard dataset for comparing models.
-* **Key Metrics:** F1 score, Precision, Recall.
-* **State-of-the-art Performance:** BERT-based models (around 90% F1 score).
-
-**2. GENIA Corpus:**
-
-* **Dataset:** Biomedical literature annotated with gene and protein names.
-* **Significance:** Important for NER in the domain of biomedicine.
-* **Key Metrics:** F1 score, Precision, Recall.
-* **State-of-the-art Performance:** Specialized bio-NER models achieving high F1 scores (above 90%).
-
-**3. OntoNotes 5.0:**
-
-* **Dataset:** Diverse text genres (news, blogs, web text) with 18 entity types.
-* **Significance:** Covers a broader range of entity types and diverse text styles.
-* **Key Metrics:** F1 score, Precision, Recall.
-* **State-of-the-art Performance:** BERT-based models, achieving F1 scores above 90%.
-
-**4. WNUT 2017 NER Task:**
-
-* **Dataset:** Twitter data with 10 entity types.
-* **Significance:** Focuses on NER in social media text, addressing the challenges of informal language and noise.
-* **Key Metrics:** F1 score, Precision, Recall.
-* **State-of-the-art Performance:** Models achieving F1 scores in the 80s, reflecting the complexity of social media text.
-
-**5. ACE 2005:**
-
-* **Dataset:** English broadcast news transcripts with 7 entity types.
-* **Significance:** Provides a benchmark for NER in news transcripts, considering temporal information and complex entities.
-* **Key Metrics:** F1 score, Precision, Recall.
-* **State-of-the-art Performance:** Specialized models for news transcript NER, achieving high F1 scores.
 
 #### Compare your results to existing benchmarks in NER:
 <!-- قارن هنا  -->
