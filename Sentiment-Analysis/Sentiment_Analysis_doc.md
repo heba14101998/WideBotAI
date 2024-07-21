@@ -4,7 +4,7 @@
 
 ---
 
-### 1. Introduction**
+### 1. Introduction
 
 Sentiment analysis is crucial for understanding customer feedback, gauging public opinion, and improving marketing strategies. This project aims to build a system that can accurately classify the sentiment expressed in text data.
 
@@ -47,21 +47,21 @@ Sentiment analysis is crucial for understanding customer feedback, gauging publi
 * wordcloud==1.9.3
 
 
-### 4. Exploratory Data Analysis (EDA):**
+### 4. Exploratory Data Analysis (EDA):
 
 * **Purpose:** Understand the characteristics of your data before building any model. This helps you choose the right techniques and identify potential challenges.
 * **Steps:**
     * **Distribution Analysis:** Examine the balance of sentiment classes.
     * **Visualization:** Create charts and graphs to understand the data better.
 
-### 5. Text Normalization:**
+### 5. Text Normalization:
 
 * **Purpose:** Prepare the text data for the model. This involves cleaning and transforming the text to make it consistent and easier to process.
 * **Common Techniques:**
 - Clean Text from irrelavant words and special charcters.
 - BERT's tokenizer splits contractions into their constituent words, like "can't" into "can" and "not". So, It may be beneficial to expand contractions in the input text to improve the model's performance.
 
-### 6. Baseline Experiments: Classical ML Algorithm**
+### 6. Baseline Experiments: Classical ML Algorithm
 
 * **Goal:**  Establish a reference point for comparison with more advanced methods. 
 #### Methodology:
@@ -80,7 +80,7 @@ Sentiment analysis is crucial for understanding customer feedback, gauging publi
 
 4. **Prediction:** Use the trained model to predict sentiment on unseen text.
 
-### 7. Advanced Experiments: Use BERT Base for tokenizing**
+### 7. Advanced Experiments: Use BERT Base for tokenizing
 
 * **Goal:** Clearly state the goal of this experiment (e.g., "To explore the performance of a pre-trained language model like BERT for sentiment analysis").
 #### Methodology:
@@ -91,7 +91,7 @@ Sentiment analysis is crucial for understanding customer feedback, gauging publi
 3. **Fine-tuning**
 4. **Evaluation:**  Use the same evaluation metrics as in the baseline experiment (accuracy, precision, recall, F1-score). 
 
-### 8. Overall Conclusion**
+### 8. Overall Conclusion
 
 While both the TF-IDF and BERT methods achieved moderate success in sentiment analysis, the BERT method showed potential for higher accuracy but requires further tuning and optimization. 
 

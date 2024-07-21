@@ -3,7 +3,7 @@ This repository contains two tasks:
 
 1. **Named Entity Recognition using NLP**: Develop a model for Named Entity Recognition on text data by prepare, train, and evluation the dataset in order to predict the entity for each word in the sentences.
 
-2. ** **: 
+2. **Sentiment Analysis using NLP**: Build a model that analyzes text data to classify its sentiment (positive, negative, or neutral) by preparing, training, and evaluating the model on labeled text data.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
